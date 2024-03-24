@@ -6,7 +6,7 @@
 #    By: lboiteux <lboiteux@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/13 09:36:52 by lboiteux          #+#    #+#              #
-#    Updated: 2024/03/24 17:49:05 by lboiteux         ###   ########.fr        #
+#    Updated: 2024/03/24 18:12:17 by lboiteux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -186,7 +186,7 @@ clean:
 	$(RM) $(OBJS_DIR)
 
 fclean: clean
-	@printf "  $(COLOR_3)└──> 🗑️    \033[1;38;5;255mlibft binary \033[1;38;5;248mhas been deleted$(RESET)\n\n"
+	@printf "  $(COLOR_3)└──> 🗑️    \033[1;38;5;255m$(NAME) binary \033[1;38;5;248mhas been deleted$(RESET)\n\n"
 	$(RM) $(NAME)
 
 clear:
@@ -195,4 +195,3 @@ clear:
 re:	clear fclean all
 
 .PHONY:	re fclean all clean
-
