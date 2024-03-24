@@ -6,7 +6,7 @@
 #    By: lboiteux <lboiteux@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/13 09:36:52 by lboiteux          #+#    #+#              #
-#    Updated: 2024/03/18 16:48:48 by lboiteux         ###   ########.fr        #
+#    Updated: 2024/03/24 14:46:55 by lboiteux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,12 @@ NAME	=	libft.a
 # **************************************************************************** #
 CC		=	@cc
 CFLAGS	=	-Wall -Wextra -Werror -g
+IFLAGS	=	-I ./
 MK		=	@mkdir -p
 RM		=	@rm -rf
-FILE	=	$(shell ls -lR src/ | grep -F .c | wc -l)
-LIB_CMP		=	1
+FILE	=	$(shell ls -lR srcs/ | grep -F .c | wc -l)
+PROJ_CMP	=	1
+RM		= 	@rm -rf
 CLEAR	=	@clear
 
 # **************************************************************************** #
@@ -155,7 +157,7 @@ SRCS		:=	char/ft_isalnum.c\
 							get_next_line/get_next_line.c\
 							get_next_line/get_next_line_utils.c
 
-SRCS_DIR	:=	src
+SRCS_DIR	:=	srcs
 SRCS		:=	$(SRCS:%=$(SRCS_DIR)/%)
 
 # OBJECTS
@@ -170,23 +172,31 @@ all: $(NAME)
 
 $(OBJS_DIR)/%.o: %.c
 	$(MK) $(@D)
-	@if [ "$(LIB_CMP)" -ne "$(FILE)" ]; then \
-		printf " \033[1;38;5;28m [\033[0m$(LIB_CMP)\033[1;38;5;28m/\033[0m$(FILE)\033[1;38;5;28m]	\033[0m$<                        \r"; \
+	$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
+	@if [ "$(PROJ_CMP)" -ne "$(FILE)" ]; then \
+		printf " \033[1;38;5;28m [\033[0m$(PROJ_CMP)\033[1;38;5;28m/\033[0m$(FILE)\033[1;38;5;28m]\t\033[0m$(GREEN)$<$(BLUE)$(RESET)                        \r"; \
 	else \
-		printf " \033[1;38;5;28m [\033[0m$(LIB_CMP)\033[1;38;5;28m/\033[0m$(FILE)\033[1;38;5;28m]	\033[0m$<\n\n"; \
+		printf " \033[1;38;5;28m [\033[0m$(PROJ_CMP)\033[1;38;5;28m/\033[0m$(FILE)\033[1;38;5;28m]\t\033[0m$(GREEN)$<$(BLUE)$(RESET)\n\n"; \
 	fi
-	$(CC) $(CFLAGS) -c $< -o  $@
-	$(eval LIB_CMP=$(shell echo $$(($(LIB_CMP)+1))))
+	@$(eval PROJ_CMP=$(shell echo $$(($(PROJ_CMP)+1))))
 
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
+	@printf "  ✅ \033[1;38;5;120m$(NAME) successfully compiled\033[0m\n"
+	@printf "  🔄 \033[1;38;5;240m$(NAME) is ready to run\033[0m \n"
 
 clean:
+	@printf "  👾 \033[1;4;38;5;240m$(NAME)\033[0m   \n  \033[1;38;5;240m└──> 🗑️    \033[1;38;5;255m.o \033[1;38;5;248mhave been deleted$(RESET)\n"	
 	$(RM) $(OBJS_DIR)
 
 fclean: clean
-	$(RM) $(NAME)
+		@printf "  \033[1;38;5;240m└──> 🗑️    \033[1;38;5;255mlibft binary \033[1;38;5;248mhas been deleted$(RESET)\n"
+		$(RM) $(NAME)
 
-re: fclean all
+clear:
+	@clear
 
+re:	clear fclean all
+
+.PHONY:	re fclean all clean
 
