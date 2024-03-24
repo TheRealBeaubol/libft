@@ -6,7 +6,7 @@
 #    By: lboiteux <lboiteux@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/13 09:36:52 by lboiteux          #+#    #+#              #
-#    Updated: 2024/03/24 18:12:17 by lboiteux         ###   ########.fr        #
+#    Updated: 2024/03/24 18:57:43 by lboiteux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -100,16 +100,16 @@ SRCS		:=	char/ft_isalnum.c\
 							str/ft_str_swap.c\
 							str_tab/ft_tablen.c\
 							str_tab/ft_sort_string_tab.c\
-							chain_list/ft_lstnew.c\
-							chain_list/ft_lstadd_front.c\
-							chain_list/ft_lstsize.c\
-							chain_list/ft_lstlast.c\
-							chain_list/ft_lstadd_back.c\
-							chain_list/ft_lstdelone.c\
-							chain_list/ft_lstclear.c\
-							chain_list/ft_lstiter.c\
-							chain_list/ft_lstmap.c\
-							chain_list/print_list.c\
+							linked_list/ft_lstnew.c\
+							linked_list/ft_lstadd_front.c\
+							linked_list/ft_lstsize.c\
+							linked_list/ft_lstlast.c\
+							linked_list/ft_lstadd_back.c\
+							linked_list/ft_lstdelone.c\
+							linked_list/ft_lstclear.c\
+							linked_list/ft_lstiter.c\
+							linked_list/ft_lstmap.c\
+							linked_list/print_list.c\
 							write/ft_putchar_fd.c\
 							write/ft_putstr_fd.c\
 							write/ft_putendl_fd.c\
