@@ -6,7 +6,7 @@
 /*   By: lboiteux <lboiteux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 18:48:25 by lboiteux          #+#    #+#             */
-/*   Updated: 2024/03/24 18:28:22 by lboiteux         ###   ########.fr       */
+/*   Updated: 2024/03/24 18:29:20 by lboiteux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*l;
 
-	// fdp
 	if (!lst)
 		return ;
 	if (!(*lst))
