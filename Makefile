@@ -6,7 +6,7 @@
 #    By: lboiteux <lboiteux@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/13 09:36:52 by lboiteux          #+#    #+#              #
-#    Updated: 2024/03/24 18:57:43 by lboiteux         ###   ########.fr        #
+#    Updated: 2024/03/25 10:28:08 by lboiteux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,6 +61,7 @@ SRCS		:=	char/ft_isalnum.c\
 							malloc/ft_strdup.c\
 							malloc/ft_free_tab.c\
 							malloc/ft_free_list.c\
+							malloc/ft_free_intlist.c\
 							malloc/ft_free_int_tab.c\
 							malloc/ft_realloc.c\
 							malloc/ft_strdup_range.c\
@@ -100,6 +101,14 @@ SRCS		:=	char/ft_isalnum.c\
 							str/ft_str_swap.c\
 							str_tab/ft_tablen.c\
 							str_tab/ft_sort_string_tab.c\
+							error/ft_error.c\
+							linked_list/ft_intlstlast.c\
+							linked_list/ft_intlstadd_back.c\
+							linked_list/ft_intlstadd_front.c\
+							linked_list/ft_intlstnew.c\
+							linked_list/ft_intlstsize.c\
+							linked_list/ft_lst_max.c\
+							linked_list/ft_lst_min.c\
 							linked_list/ft_lstnew.c\
 							linked_list/ft_lstadd_front.c\
 							linked_list/ft_lstsize.c\
